@@ -1,1 +1,0 @@
-// Razorpay configuration placeholder
