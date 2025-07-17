@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Tiwari Studio</title>
+    <meta name="description" content="Explore our stunning photography portfolio showcasing weddings, pre-wedding shoots, portraits, and more professional photography work.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-camera"></i>
+                <span>Tiwari Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="frames.html" class="nav-link">Frames</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link nav-cta">Book Now</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-images"></i> Our Portfolio</h1>
+                <p>Discover the artistry behind our photography through our curated collection</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Gallery</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter Section -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-th"></i>
+                    All Photos
+                </button>
+                <button class="filter-btn" data-category="wedding">
+                    <i class="fas fa-ring"></i>
+                    Weddings
+                </button>
+                <button class="filter-btn" data-category="pre-wedding">
+                    <i class="fas fa-heart"></i>
+                    Pre-Wedding
+                </button>
+                <button class="filter-btn" data-category="maternity">
+                    <i class="fas fa-female"></i>
+                    Maternity
+                </button>
+                <button class="filter-btn" data-category="baby">
+                    <i class="fas fa-baby"></i>
+                    Baby Welcome
+                </button>
+                <button class="filter-btn" data-category="fashion">
+                    <i class="fas fa-user-tie"></i>
+                    Fashion
+                </button>
+                <button class="filter-btn" data-category="freelance">
+                    <i class="fas fa-camera-retro"></i>
+                    Events
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- Sample gallery items - these would be loaded dynamically -->
+                <div class="gallery-item" data-category="wedding">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&q=80" alt="Wedding Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Beautiful Wedding</h3>
+                                <p>Outdoor ceremony with stunning natural lighting</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="pre-wedding">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=500&q=80" alt="Pre-Wedding Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Romantic Pre-Wedding</h3>
+                                <p>Intimate moments captured in golden hour</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="maternity">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Maternity Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Expecting Joy</h3>
+                                <p>Beautiful maternity session celebrating new life</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="baby">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&q=80" alt="Baby Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>New Arrival</h3>
+                                <p>Gentle newborn photography with soft lighting</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fashion">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80" alt="Fashion Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Fashion Portrait</h3>
+                                <p>Professional fashion photography with dramatic lighting</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="freelance">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500&q=80" alt="Event Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Corporate Event</h3>
+                                <p>Professional event coverage and candid moments</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wedding">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=500&q=80" alt="Wedding Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Traditional Ceremony</h3>
+                                <p>Sacred moments captured with reverence and beauty</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="pre-wedding">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&q=80" alt="Pre-Wedding Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Love Story</h3>
+                                <p>Capturing the chemistry between soulmates</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fashion">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1534126416832-7c5e9eafd755?w=500&q=80" alt="Portrait Photography">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Editorial Portrait</h3>
+                                <p>Stunning portrait with professional styling</p>
+                                <button class="view-btn" onclick="openLightbox(this)">
+                                    <i class="fas fa-expand"></i>
+                                    View Full
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="gallery-load-more">
+                <button id="load-more-btn" class="btn btn-secondary btn-large">
+                    <i class="fas fa-plus"></i>
+                    Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" style="display: none;">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img id="lightbox-image" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+                <div class="lightbox-actions">
+                    <button class="btn btn-primary" onclick="contactForBooking()">
+                        <i class="fas fa-calendar"></i>
+                        Book Similar Session
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadImage()">
+                        <i class="fas fa-download"></i>
+                        Request High-Res
+                    </button>
+                </div>
+            </div>
+            <div class="lightbox-navigation">
+                <button class="nav-btn prev-btn" onclick="previousImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Own Memories?</h2>
+                <p>Let us capture your special moments with the same artistry and passion you see in our portfolio</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Your Session
+                    </a>
+                    <a href="index.html#contact" class="btn btn-secondary btn-large">
+                        <i class="fas fa-comments"></i>
+                        Discuss Your Vision
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-camera"></i>
+                        <span>Tiwari Studio</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional photography services capturing life's most precious moments with artistry and passion.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=wedding">Wedding Photography</a></li>
+                        <li><a href="gallery.html?category=pre-wedding">Pre-Wedding Shoots</a></li>
+                        <li><a href="gallery.html?category=maternity">Maternity Sessions</a></li>
+                        <li><a href="gallery.html?category=baby">Baby Photography</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 96853 42997</p>
+                        <p><i class="fas fa-envelope"></i> mr.prashants.62@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> A 126 Chhatra Chhaya Colony Pithampur Dhar (M.P.) 454775</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tiwari Studio. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for capturing memories</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

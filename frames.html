@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Frames - Tiwari Studio</title>
+    <meta name="description" content="Discover our beautiful collection of photo frames perfect for displaying your precious memories. Professional quality frames in various styles and sizes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-camera"></i>
+                <span>Tiwari Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="frames.html" class="nav-link active">Frames</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link nav-cta">Book Now</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Frames Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-border-style"></i> Premium Photo Frames</h1>
+                <p>Beautiful frames to showcase your precious memories in style</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Frames</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frame Categories Section -->
+    <section class="frame-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-material="all">
+                    <i class="fas fa-th"></i>
+                    All Frames
+                </button>
+                <button class="category-btn" data-material="wood">
+                    <i class="fas fa-tree"></i>
+                    Wooden Frames
+                </button>
+                <button class="category-btn" data-material="metal">
+                    <i class="fas fa-coins"></i>
+                    Metal Frames
+                </button>
+                <button class="category-btn" data-material="acrylic">
+                    <i class="fas fa-gem"></i>
+                    Acrylic Frames
+                </button>
+                <button class="category-btn" data-material="vintage">
+                    <i class="fas fa-history"></i>
+                    Vintage Frames
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frames Collection Section -->
+    <section class="frames-section">
+        <div class="container">
+            <div id="frames-grid" class="frames-grid">
+                <!-- Wooden Frames -->
+                <div class="frame-card" data-material="wood">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Classic Wooden Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                        <div class="frame-badge">Popular</div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Classic Wooden Frame</h3>
+                        <p class="frame-material">Premium Teak Wood</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">8x10</span>
+                            <span class="size-tag">12x16</span>
+                            <span class="size-tag">16x20</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹2,500</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame-card" data-material="metal">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80" alt="Modern Metal Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Modern Metal Frame</h3>
+                        <p class="frame-material">Brushed Aluminum</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">10x12</span>
+                            <span class="size-tag">16x20</span>
+                            <span class="size-tag">20x24</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹1,800</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame-card" data-material="vintage">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80" alt="Vintage Gold Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                        <div class="frame-badge premium">Premium</div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Vintage Gold Frame</h3>
+                        <p class="frame-material">Ornate Gold Finish</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">16x20</span>
+                            <span class="size-tag">20x24</span>
+                            <span class="size-tag">24x30</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹3,500</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame-card" data-material="acrylic">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80" alt="Acrylic Crystal Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                        <div class="frame-badge new">New</div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Crystal Clear Acrylic</h3>
+                        <p class="frame-material">Premium Acrylic Glass</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">8x10</span>
+                            <span class="size-tag">11x14</span>
+                            <span class="size-tag">16x20</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹2,200</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame-card" data-material="wood">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&q=80" alt="Rustic Wooden Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Rustic Wooden Frame</h3>
+                        <p class="frame-material">Reclaimed Pine Wood</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">12x16</span>
+                            <span class="size-tag">16x20</span>
+                            <span class="size-tag">20x24</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹2,800</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame-card" data-material="metal">
+                    <div class="frame-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Silver Metal Frame">
+                        <div class="frame-overlay">
+                            <button class="quick-view-btn" onclick="openFrameModal(this)">
+                                <i class="fas fa-eye"></i>
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frame-info">
+                        <h3>Elegant Silver Frame</h3>
+                        <p class="frame-material">Polished Silver Finish</p>
+                        <div class="frame-sizes">
+                            <span class="size-tag">8x10</span>
+                            <span class="size-tag">11x14</span>
+                            <span class="size-tag">16x20</span>
+                        </div>
+                        <div class="frame-price">
+                            <span class="price">₹2,100</span>
+                            <span class="price-note">Starting from</span>
+                        </div>
+                        <div class="frame-actions">
+                            <button class="btn btn-primary btn-small" onclick="addToInquiry(this)">
+                                <i class="fas fa-plus"></i>
+                                Add to Inquiry
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="customizeFrame(this)">
+                                <i class="fas fa-cog"></i>
+                                Customize
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frame Information Section -->
+    <section class="frame-info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Custom Colors</h3>
+                    <p>Choose from a wide range of colors and finishes to match your home decor perfectly.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-ruler"></i>
+                    </div>
+                    <h3>Custom Sizes</h3>
+                    <p>We create frames in any size you need, from small portraits to large canvas prints.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>UV Protection</h3>
+                    <p>All frames come with UV-resistant glass to protect your precious photos from fading.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Delivery</h3>
+                    <p>Complimentary delivery and installation service within Pithampur and surrounding areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Cart -->
+    <div id="inquiry-cart" class="inquiry-cart" style="display: none;">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Frame Inquiry</h3>
+            <button class="cart-close" onclick="toggleInquiryCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Inquiry items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Estimated Total: ₹<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="submitInquiry()">
+                <i class="fas fa-paper-plane"></i>
+                Send Inquiry
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <button id="cart-toggle" class="cart-toggle" onclick="toggleInquiryCart()" style="display: none;">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+    </button>
+
+    <!-- Frame Modal -->
+    <div id="frame-modal" class="frame-modal" style="display: none;">
+        <div class="modal-overlay" onclick="closeFrameModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeFrameModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image">
+                <img id="modal-frame-image" src="" alt="">
+            </div>
+            <div class="modal-info">
+                <h3 id="modal-frame-title"></h3>
+                <p id="modal-frame-material"></p>
+                <div class="modal-details">
+                    <h4>Available Sizes & Prices:</h4>
+                    <div id="modal-size-options" class="size-options">
+                        <!-- Size options will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Premium quality materials</li>
+                        <li>UV-resistant glass</li>
+                        <li>Professional mounting</li>
+                        <li>Lifetime craftsmanship warranty</li>
+                    </ul>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="addToInquiryFromModal()">
+                        <i class="fas fa-plus"></i>
+                        Add to Inquiry
+                    </button>
+                    <button class="btn btn-secondary" onclick="contactForCustom()">
+                        <i class="fas fa-phone"></i>
+                        Custom Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="frames-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Help Choosing the Perfect Frame?</h2>
+                <p>Our experts are here to help you select the ideal frame for your precious memories</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i>
+                        Get Expert Advice
+                    </a>
+                    <a href="booking.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-camera"></i>
+                        <span>Tiwari Studio</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional photography services capturing life's most precious moments with artistry and passion.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="frames.html">Photo Frames</a></li>
+                        <li><a href="frames.html?material=wood">Wooden Frames</a></li>
+                        <li><a href="frames.html?material=metal">Metal Frames</a></li>
+                        <li><a href="frames.html?material=acrylic">Acrylic Frames</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Photography</a></li>
+                        <li><a href="gallery.html">Portfolio</a></li>
+                        <li><a href="booking.html">Book Session</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 96853 42997</p>
+                        <p><i class="fas fa-envelope"></i> mr.prashants.62@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> A 126 Chhatra Chhaya Colony Pithampur Dhar (M.P.) 454775</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tiwari Studio. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for capturing memories</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/frames.js"></script>
+</body>
+</html>

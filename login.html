@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tiwari Studio</title>
+    <meta name="description" content="Login to your Tiwari Studio account to access exclusive features and manage your bookings.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-camera"></i>
+                <span>Tiwari Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="frames.html" class="nav-link">Frames</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.html" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link nav-cta">Book Now</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-sign-in-alt"></i> Login to Your Account</h1>
+                <p>Access your dashboard and manage your photography sessions</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Login</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form-container">
+                    <div class="auth-header">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to your account to continue</p>
+                    </div>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <input type="text" id="username" name="username" required>
+                            <label for="username">Username</label>
+                            <i class="fas fa-user"></i>
+                            <span class="error-message" id="username-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Password</label>
+                            <i class="fas fa-lock"></i>
+                            <span class="error-message" id="password-error"></span>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember" class="checkbox-label">
+                                    <span class="checkmark"></span>
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large btn-block">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Sign In
+                        </button>
+
+                        <div class="auth-divider">
+                            <span>Don't have an account?</span>
+                        </div>
+
+                        <a href="register.html" class="btn btn-secondary btn-large btn-block">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </a>
+                    </form>
+
+                    <!-- Success/Error Messages -->
+                    <div id="login-success" class="success-message" style="display: none;">
+                        <div class="success-content">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Login Successful!</h3>
+                            <p>Redirecting to your dashboard...</p>
+                        </div>
+                    </div>
+
+                    <div id="login-error" class="error-alert" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="login-error-message"></span>
+                    </div>
+                </div>
+
+                <div class="auth-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-crown"></i> Admin Access</h3>
+                        <p>Administrators can access the dashboard to:</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> View all bookings and inquiries</li>
+                            <li><i class="fas fa-check"></i> Manage gallery images</li>
+                            <li><i class="fas fa-check"></i> Update services and pricing</li>
+                            <li><i class="fas fa-check"></i> Handle customer communications</li>
+                            <li><i class="fas fa-check"></i> Analytics and reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-user"></i> Customer Benefits</h3>
+                        <p>Create an account to enjoy:</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Quick booking process</li>
+                            <li><i class="fas fa-check"></i> Track your session status</li>
+                            <li><i class="fas fa-check"></i> Access your photo gallery</li>
+                            <li><i class="fas fa-check"></i> Special offers and updates</li>
+                            <li><i class="fas fa-check"></i> Priority customer support</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-shield-alt"></i> Secure & Private</h3>
+                        <p>Your data is protected with enterprise-grade security measures.</p>
+                        <div class="security-features">
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <span>Encrypted passwords</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Privacy protection</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-database"></i>
+                                <span>Secure data storage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-camera"></i>
+                        <span>Tiwari Studio</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional photography services capturing life's most precious moments with artistry and passion.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Account</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="booking.html">Book Session</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 96853 42997</p>
+                        <p><i class="fas fa-envelope"></i> mr.prashants.62@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> A 126 Chhatra Chhaya Colony Pithampur Dhar (M.P.) 454775</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tiwari Studio. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for capturing memories</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Session - Tiwari Studio</title>
+    <meta name="description" content="Book your photography session with Tiwari Studio. Professional photography services for weddings, pre-wedding shoots, and special occasions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-camera"></i>
+                <span>Tiwari Studio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link nav-cta active">Book Now</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-calendar-check"></i> Book Your Session</h1>
+                <p>Let's plan your perfect photography session together</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Book Now</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <div class="form-header">
+                        <h2>Schedule Your Photography Session</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours to confirm your booking.</p>
+                    </div>
+
+                    <form id="booking-form" class="booking-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="fullName" name="fullName" required>
+                                    <label for="fullName">Full Name *</label>
+                                    <span class="error-message" id="fullName-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="email">Email Address *</label>
+                                    <span class="error-message" id="email-error"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="tel" id="mobile" name="mobile" required>
+                                    <label for="mobile">Mobile Number *</label>
+                                    <span class="error-message" id="mobile-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="location" name="location">
+                                    <label for="location">Your Location</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Details -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-camera"></i> Service Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select id="serviceType" name="serviceType" required>
+                                        <option value="">Choose a service</option>
+                                        <option value="pre-wedding">Pre-Wedding Shoots</option>
+                                        <option value="wedding">Wedding Photography</option>
+                                        <option value="videography">Videography</option>
+                                        <option value="baby-welcome">Baby Welcome Shoots</option>
+                                        <option value="freelance">Freelance Photography</option>
+                                    </select>
+                                    <label for="serviceType">Service Type *</label>
+                                    <span class="error-message" id="serviceType-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" id="preferredDate" name="preferredDate" required>
+                                    <label for="preferredDate">Preferred Date *</label>
+                                    <span class="error-message" id="preferredDate-error"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select id="duration" name="duration">
+                                        <option value="">Select duration</option>
+                                        <option value="2-hours">2 Hours</option>
+                                        <option value="4-hours">4 Hours</option>
+                                        <option value="6-hours">6 Hours</option>
+                                        <option value="full-day">Full Day</option>
+                                        <option value="multiple-days">Multiple Days</option>
+                                    </select>
+                                    <label for="duration">Session Duration</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="guests" name="guests" min="1" max="1000">
+                                    <label for="guests">Number of People</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-info-circle"></i> Additional Information</h3>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us more about your event, special requirements, preferred locations, or any other details that would help us serve you better..."></textarea>
+                                <label for="message">Special Requirements & Message</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter" class="checkbox-label">
+                                    <span class="checkmark"></span>
+                                    I'd like to receive updates about new services and special offers
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms" class="checkbox-label">
+                                    <span class="checkmark"></span>
+                                    I agree to the terms and conditions *
+                                </label>
+                                <span class="error-message" id="terms-error"></span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Booking Request
+                            </button>
+                            <p class="form-note">
+                                <i class="fas fa-shield-alt"></i>
+                                Your information is secure and will only be used to contact you about your booking.
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="success-message" style="display: none;">
+                        <div class="success-content">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Booking Request Submitted!</h3>
+                            <p>Thank you for choosing Tiwari Studio. We've received your booking request and will contact you within 24 hours to confirm the details.</p>
+                            <button onclick="resetForm()" class="btn btn-secondary">Submit Another Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Info Sidebar -->
+                <div class="booking-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Booking Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>We'll respond to your booking request within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Advance Booking</h4>
+                                <p>We recommend booking at least 2-3 weeks in advance</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <h4>Pricing</h4>
+                                <p>Custom quotes based on your specific requirements</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-phone"></i> Need Help?</h3>
+                        <p>Have questions about our services or need immediate assistance?</p>
+                        <div class="contact-options">
+                            <a href="tel:+919876543210" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                Call Us: +91 98765 43210
+                            </a>
+                            <a href="mailto:info@tiwaristudio.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                                Email: info@tiwaristudio.com
+                            </a>
+                            <a href="https://wa.me/919876543210" class="contact-btn whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp Chat
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Professional equipment</li>
+                            <li><i class="fas fa-check"></i> Experienced photographers</li>
+                            <li><i class="fas fa-check"></i> High-quality editing</li>
+                            <li><i class="fas fa-check"></i> Fast delivery</li>
+                            <li><i class="fas fa-check"></i> Competitive pricing</li>
+                            <li><i class="fas fa-check"></i> Customer satisfaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-camera"></i>
+                        <span>Tiwari Studio</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional photography services capturing life's most precious moments with artistry and passion.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Pre-Wedding Shoots</a></li>
+                        <li><a href="booking.html">Wedding Photography</a></li>
+                        <li><a href="booking.html">Videography</a></li>
+                        <li><a href="booking.html">Baby Welcome Shoots</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@tiwaristudio.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tiwari Studio. All rights reserved. | Crafted with <i class="fas fa-heart"></i> for capturing memories</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

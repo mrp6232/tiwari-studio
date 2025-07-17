@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Tiwari Studio</title>
+    <meta name="description" content="Admin dashboard for managing Tiwari Studio bookings, users, and content.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="admin-logo">
+                <i class="fas fa-camera"></i>
+                <span>Tiwari Studio Admin</span>
+            </div>
+            <div class="admin-user">
+                <span id="admin-username">Admin</span>
+                <button class="logout-btn" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <nav class="admin-nav">
+            <ul>
+                <li>
+                    <a href="#dashboard" class="nav-link active" onclick="showSection('dashboard')">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#bookings" class="nav-link" onclick="showSection('bookings')">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#users" class="nav-link" onclick="showSection('users')">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#gallery" class="nav-link" onclick="showSection('gallery')">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#frames" class="nav-link" onclick="showSection('frames')">
+                        <i class="fas fa-border-style"></i>
+                        <span>Frames</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="window.open('/', '_blank')">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>View Website</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Admin Main Content -->
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="admin-section active">
+            <div class="section-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+                <p>Welcome to Tiwari Studio Admin Panel</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="total-bookings">0</h3>
+                        <p>Total Bookings</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="total-users">0</h3>
+                        <p>Registered Users</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="pending-bookings">0</h3>
+                        <p>Pending Bookings</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="total-gallery">0</h3>
+                        <p>Gallery Images</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="recent-bookings">
+                    <h2><i class="fas fa-calendar-alt"></i> Recent Bookings</h2>
+                    <div class="table-container">
+                        <table id="recent-bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="showSection('bookings')">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>View All Bookings</span>
+                        </button>
+                        <button class="action-btn" onclick="showSection('users')">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Manage Users</span>
+                        </button>
+                        <button class="action-btn" onclick="showSection('gallery')">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Gallery Image</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookings Section -->
+        <section id="bookings-section" class="admin-section">
+            <div class="section-header">
+                <h1><i class="fas fa-calendar-alt"></i> Bookings Management</h1>
+                <p>Manage all customer bookings and inquiries</p>
+            </div>
+
+            <div class="bookings-filters">
+                <div class="filter-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter" onchange="filterBookings()">
+                        <option value="all">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="service-filter">Filter by Service:</label>
+                    <select id="service-filter" onchange="filterBookings()">
+                        <option value="all">All Services</option>
+                        <option value="wedding">Wedding Photography</option>
+                        <option value="pre-wedding">Pre-Wedding Shoot</option>
+                        <option value="maternity">Maternity Photography</option>
+                        <option value="baby">Baby Welcome Photography</option>
+                        <option value="fashion">Fashion Photography</option>
+                        <option value="freelance">Event Photography</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" onclick="refreshBookings()">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="bookings-table" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Client Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Service</th>
+                            <th>Event Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Users Section -->
+        <section id="users-section" class="admin-section">
+            <div class="section-header">
+                <h1><i class="fas fa-users"></i> Users Management</h1>
+                <p>Manage registered users and their roles</p>
+            </div>
+
+            <div class="users-actions">
+                <button class="btn btn-primary" onclick="refreshUsers()">
+                    <i class="fas fa-sync"></i>
+                    Refresh Users
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="users-table" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Full Name</th>
+                            <th>Role</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section" class="admin-section">
+            <div class="section-header">
+                <h1><i class="fas fa-images"></i> Gallery Management</h1>
+                <p>Manage portfolio images and categories</p>
+            </div>
+
+            <div class="gallery-actions">
+                <button class="btn btn-primary" onclick="showAddImageForm()">
+                    <i class="fas fa-plus"></i>
+                    Add New Image
+                </button>
+                <button class="btn btn-secondary" onclick="refreshGallery()">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </button>
+            </div>
+
+            <div id="add-image-form" class="form-container" style="display: none;">
+                <h3>Add New Gallery Image</h3>
+                <form id="gallery-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="image-title">Image Title</label>
+                            <input type="text" id="image-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="image-category">Category</label>
+                            <select id="image-category" required>
+                                <option value="">Select Category</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="pre-wedding">Pre-Wedding</option>
+                                <option value="maternity">Maternity</option>
+                                <option value="baby">Baby</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="freelance">Events</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-description">Description</label>
+                        <textarea id="image-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-url">Image URL</label>
+                        <input type="url" id="image-url" placeholder="https://example.com/image.jpg" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Add Image</button>
+                        <button type="button" class="btn btn-secondary" onclick="hideAddImageForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="gallery-grid" class="admin-gallery-grid">
+                <!-- Gallery images will be populated here -->
+            </div>
+        </section>
+
+        <!-- Frames Section -->
+        <section id="frames-section" class="admin-section">
+            <div class="section-header">
+                <h1><i class="fas fa-border-style"></i> Frames Management</h1>
+                <p>Manage photo frames catalog and pricing</p>
+            </div>
+
+            <div class="frames-actions">
+                <button class="btn btn-primary" onclick="showAddFrameForm()">
+                    <i class="fas fa-plus"></i>
+                    Add New Frame
+                </button>
+                <button class="btn btn-secondary" onclick="refreshFrames()">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="frames-table" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Material</th>
+                            <th>Base Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Booking Details Modal -->
+    <div id="booking-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Booking Details</h3>
+                <button class="modal-close" onclick="closeBookingModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="booking-details">
+                <!-- Booking details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeBookingModal()">Close</button>
+                <button class="btn btn-primary" onclick="updateBookingStatus()">Update Status</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
